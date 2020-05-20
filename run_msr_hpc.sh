@@ -48,7 +48,7 @@ git branch | tee -a ${log_file}
 echo "Running code..." | tee -a ${log_file}
 if [ "$GPU" == "" ]; then GPU=0; fi
 #python main.py # If this is what you want to do.
-./run_all_cpu.sh EURLex-4K sparse ${A} 1.5 Parabel | tee -a ${log_file}
+./run_all_cpu.sh EURLex-4K sparse ${A} 1.5 Parabel 2>&1 | tee -a ${log_file}
 
 ########## Kill azcopy background process and write output to azure file storage one final time
 kill -9 $AZCOPY_PID
