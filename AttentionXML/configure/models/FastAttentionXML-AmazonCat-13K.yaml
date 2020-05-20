@@ -1,0 +1,33 @@
+name: FastAttentionXML
+
+level: 3
+k: 4
+top: 30
+
+model:
+  hidden_size: 512
+  layers_num: 1
+  linear_size: [512, 256]
+  dropout: 0.5
+
+cluster:
+  max_leaf: 4
+  eps: 1e-4
+  levels: [10, 12]
+
+train:
+  [{batch_size: 200, nb_epoch: 10, swa_warmup: 2},
+   {batch_size: 200, nb_epoch: 10, swa_warmup: 1},
+   {batch_size: 200, nb_epoch: 10, swa_warmup: 1},
+   {batch_size: 200, nb_epoch: 10, swa_warmup: 1},
+   {batch_size: 200, nb_epoch: 10, swa_warmup: 1}]
+
+valid:
+  batch_size: 200
+
+predict:
+  batch_size: 200
+
+path: models
+
+board: runs/FastAttentionXML

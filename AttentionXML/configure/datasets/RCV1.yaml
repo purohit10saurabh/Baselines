@@ -1,0 +1,23 @@
+name: RCV1
+
+train:
+  texts: data/RCV1/train_texts.npy
+  labels: data/RCV1/train_labels.npy
+
+valid:
+  size: 200
+
+test:
+  texts: data/RCV1/test_texts.npy
+  name: RCV1
+
+embedding:
+  emb_init: data/RCV1/emb_init.npy
+
+output:
+  res: results
+
+labels_binarizer: data/RCV1/labels_binarizer
+
+model:
+  emb_size: 300

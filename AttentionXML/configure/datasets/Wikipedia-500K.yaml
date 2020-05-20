@@ -1,0 +1,28 @@
+name: Wikipedia-500K
+
+train:
+  sparse: data/Wikipedia-500K/train.txt
+  texts: data/Wikipedia-500K/train_texts.npy
+  labels: data/Wikipedia-500K/train_labels.npy
+
+valid:
+  size: 4000
+
+test:
+  texts: data/Wikipedia-500K/test_texts.npy
+  name: Wikipedia-500K
+
+embedding:
+  emb_init: data/Wikipedia-500K/emb_init.npy
+
+output:
+  res: results
+
+labels_binarizer: data/Wikipedia-500K/labels_binarizer
+
+model:
+  emb_size: 300
+  labels_list: data/Wikipedia-500K/cluster_labels_list.npy
+
+cluster:
+  labels_list: data/Wikipedia-500K/cluster_labels_list.npy

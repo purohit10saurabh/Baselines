@@ -1,0 +1,28 @@
+name: WikiSeeAlsoTitles-350K
+
+train:
+  sparse: data/WikiSeeAlsoTitles-350K/train.txt
+  texts: data/WikiSeeAlsoTitles-350K/train_texts.npy
+  labels: data/WikiSeeAlsoTitles-350K/train_labels.npy
+
+valid:
+  size: 4000
+
+test:
+  texts: data/WikiSeeAlsoTitles-350K/test_texts.npy
+  name: WikiSeeAlsoTitles-350K
+
+embedding:
+  emb_init: data/WikiSeeAlsoTitles-350K/emb_init.npy
+
+output:
+  res: results
+
+labels_binarizer: data/WikiSeeAlsoTitles-350K/labels_binarizer
+
+model:
+  emb_size: 300
+  labels_list: data/WikiSeeAlsoTitles-350K/cluster_labels_list.npy
+
+cluster:
+  labels_list: data/WikiSeeAlsoTitles-350K/cluster_labels_list.npy

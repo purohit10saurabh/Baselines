@@ -1,0 +1,28 @@
+name: AmazonTitles-300K
+
+train:
+  sparse: data/AmazonTitles-300K/train.txt
+  texts: data/AmazonTitles-300K/train_texts.npy
+  labels: data/AmazonTitles-300K/train_labels.npy
+
+valid:
+  size: 4000
+
+test:
+  texts: data/AmazonTitles-300K/test_texts.npy
+  name: AmazonTitles-300K
+
+embedding:
+  emb_init: data/AmazonTitles-300K/emb_init.npy
+
+output:
+  res: results
+
+labels_binarizer: data/AmazonTitles-300K/labels_binarizer
+
+model:
+  emb_size: 300
+  labels_list: data/AmazonTitles-300K/cluster_labels_list.npy
+
+cluster:
+  labels_list: data/AmazonTitles-300K/cluster_labels_list.npy

@@ -1,0 +1,27 @@
+name: WikiLSHTC
+
+train:
+  sparse: data/WikiLSHTC/train_v2.txt
+  texts: data/WikiLSHTC/train_texts.npy
+  labels: data/WikiLSHTC/train_labels.npy
+
+valid:
+  size: 4000
+
+test:
+  texts: data/WikiLSHTC/test_texts.npy
+  name: WikiLSHTC
+
+embedding:
+  emb_init: data/WikiLSHTC/emb_init.npy
+
+output:
+  res: results
+
+labels_binarizer: data/WikiLSHTC/labels_binarizer
+
+model:
+  emb_size: 300
+
+cluster:
+  labels_list: data/WikiLSHTC/cluster_labels_list.npy

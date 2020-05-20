@@ -1,0 +1,28 @@
+name: WikiTitles-500K
+
+train:
+  sparse: data/WikiTitles-500K/train.txt
+  texts: data/WikiTitles-500K/train_texts.npy
+  labels: data/WikiTitles-500K/train_labels.npy
+
+valid:
+  size: 4000
+
+test:
+  texts: data/WikiTitles-500K/test_texts.npy
+  name: WikiTitles-500K
+
+embedding:
+  emb_init: data/WikiTitles-500K/emb_init.npy
+
+output:
+  res: results
+
+labels_binarizer: data/WikiTitles-500K/labels_binarizer
+
+model:
+  emb_size: 300
+  labels_list: data/WikiTitles-500K/cluster_labels_list.npy
+
+cluster:
+  labels_list: data/WikiTitles-500K/cluster_labels_list.npy

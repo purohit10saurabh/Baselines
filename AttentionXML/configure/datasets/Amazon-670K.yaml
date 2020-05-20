@@ -1,0 +1,33 @@
+name: Amazon-670K
+
+train:
+  sparse: data/Amazon-670K/train_v1.txt
+  texts: data/Amazon-670K/train_texts.npy
+  labels: data/Amazon-670K/train_labels.npy
+
+valid:
+  size: 4000
+
+test:
+  name: Amazon-670K
+  texts: data/Amazon-670K/test_texts.npy
+  dense: data/Amazon-670K/test_dense.npy
+
+embedding:
+  emb_init: data/Amazon-670K/emb_init.npy
+
+output:
+  res: results
+
+labels_binarizer: data/Amazon-670K/labels_binarizer
+
+model:
+  emb_size: 300
+  labels_list: data/Amazon-670K/cluster_labels_list.npy
+
+cluster:
+  labels_list: data/Amazon-670K/cluster_labels_list.npy
+
+hnswlib:
+  index: data/Amazon-670K/hnswlib.index
+  dim: 512
