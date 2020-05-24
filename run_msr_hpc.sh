@@ -29,6 +29,11 @@ upload_log_file () {
 ########## Creating log file
 touch ${log_file}
 
+########## printing hardware information
+nvidia-smi | tee -a ${log_file}
+free -gh | tee -a ${log_file}
+lscpu | tee -a ${log_file}
+
 ########## Copy datasets from azure storage into docker image
 echo "Downloading data from azure blob..." | tee -a ${log_file}
 azcopy --destination ../data/ --source ${root_blob}/data/ --source-key ${secret_key} --recursive | tee -a ${log_file}
@@ -48,7 +53,7 @@ git branch | tee -a ${log_file}
 echo "Running code..." | tee -a ${log_file}
 if [ "$GPU" == "" ]; then GPU=0; fi
 #python main.py # If this is what you want to do.
-./run_all_cpu.sh EURLex-4K sparse ${A} 1.5 Parabel 2>&1 | tee -a ${log_file}
+CUDA_VISIBLE_DEVICES=$GPU ./run_all_cpu.sh EURLex-4K sparse ${A} 1.5 Parabel 2>&1 | tee -a ${log_file}
 
 ########## Kill azcopy background process and write output to azure file storage one final time
 kill -9 $AZCOPY_PID
