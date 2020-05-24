@@ -58,3 +58,4 @@ CUDA_VISIBLE_DEVICES=$GPU ./run_all_cpu.sh EURLex-4K sparse ${A} 1.5 Parabel 2>&
 ########## Kill azcopy background process and write output to azure file storage one final time
 kill -9 $AZCOPY_PID
 upload_log_file
+yes | azcopy --source ../Results/ --destination ${root_blob}/hpc_Results/EURLex-4K/${A}/ --dest-key ${secret_key} --recursive
