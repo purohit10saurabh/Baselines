@@ -1,3 +1,4 @@
+#!/bin/bash
 ##### Enabling the import of a function used in evaluation #####
 sudo make
 dataset=$1
