@@ -15,7 +15,7 @@ secret_key=$AZURE_SECRET_KEY
 
 log_file="log_master"
 if [ ! -z "$GITHUB_BRANCH" ]; then log_file="log_${GITHUB_BRANCH}"; fi
-log_file="${log_file}_${A}_${method}"
+log_file="${log_file}_${A}_${method}_${dset}"
 # if [ -z "$ENV1" ]; then log_file="${log_file}_env1"; else log_file="${log_file}_no_env1"; fi
 # if [ -z "$ENV2" ]; then log_file="${log_file}_env2"; else log_file="${log_file}_no_env2"; fi
 # if [ -z "$ENV3" ]; then log_file="${log_file}_env3"; else log_file="${log_file}_no_env3"; fi
