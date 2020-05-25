@@ -33,7 +33,7 @@ tst_lbl_file="${model_data_dir}/tst_X_Y.txt"
 # convert ${train_file} ${trn_ft_file} ${trn_lbl_file} ${test_file} ${tst_ft_file} ${tst_lbl_file}
 
 ln -s ${data_dir}/* "${model_data_dir}"
-
+ls "${work_dir}/data/"
 if [ $METHOD == 'XMLCNN' ]
 then
     echo "Runn:ing XMLCNN"

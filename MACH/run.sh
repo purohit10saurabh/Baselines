@@ -1,12 +1,11 @@
-#!/bin/bash
 ##### Enabling the import of a function used in evaluation #####
 sudo make
 dataset=$1
 workspace="$2"
 data_version="$3"
-module load apps/pythonpackages/3.6.0/tensorflow/1.9.0/gpu
-module load pythonpackages/3.6.0/pandas/0.23.4/gnu
-module load pythonpackages/3.6.0/numpy/1.16.1/gnu
+command -v module >/dev/null 2>&1 && module load apps/pythonpackages/3.6.0/tensorflow/1.9.0/gpu
+command -v module >/dev/null 2>&1 && module load pythonpackages/3.6.0/pandas/0.23.4/gnu
+command -v module >/dev/null 2>&1 && module load pythonpackages/3.6.0/numpy/1.16.1/gnu
 
 export PYTHONPATH="${PYTHONPATH}:util"
 ##### Move into the respective folder #####
