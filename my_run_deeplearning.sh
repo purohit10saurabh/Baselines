@@ -17,7 +17,8 @@ convert () {
 	perl $data_tools/convert_format.pl $4 $5 $6
 }
 
-work_dir="/mnt/t-sapuro/XC"
+#work_dir="/mnt/t-sapuro/XC"
+work_dir="../"
 data_dir="${work_dir}/data/${dataset}"
 model_data_dir="${work_dir}/data/${data_version}/${dataset}"
 mkdir -p "${model_data_dir}"
@@ -53,7 +54,7 @@ fi
 if [ $METHOD == 'MACH' ]
 then
     echo "Running MACH"
-    echo "Not Running MACH"
+    #echo "Not Running MACH"
     cd "./MACH"
     ./run.sh $dataset $work_dir ${data_version} ${extra_params}
     cd -

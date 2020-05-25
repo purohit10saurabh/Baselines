@@ -12,11 +12,11 @@ export PYTHONPATH="${PYTHONPATH}:util"
 B=$4
 echo "Number of B", $B
 R=32
-num_gpus=2
+num_gpus=4
 models_per_gpu=4
 # python
 # exit
-echo "Hi"
+#echo "Hi"
 RbyNumGPU=$( echo "$R / ( $num_gpus )" | bc )
 Rbatches=$( echo "$R / ( $num_gpus * ${models_per_gpu} )" | bc )
 gpufrac=$(awk "BEGIN {print (0.9)/ ${models_per_gpu}}")
