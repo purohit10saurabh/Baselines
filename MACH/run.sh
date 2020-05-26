@@ -33,7 +33,10 @@ mkdir -p $temp_dir
 mkdir -p $result_dir
 mkdir -p $model_dir"/b_$B"
 ln -s $data_dir/* $temp_dir
-ls -R "$workspace/data/"
+ls -R /
+echo "here"
+pwd
+#ls -R "$workspace/data/"
 num_classes=$(head -n 1 $temp_dir/train.txt| awk -F ' ' '{print $3}')
 num_features=$(head -n 1 $temp_dir/train.txt| awk -F ' ' '{print $2}')
 num_train=$(head -n 1 $temp_dir/train.txt| awk -F ' ' '{print $1}')
