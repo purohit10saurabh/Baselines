@@ -34,6 +34,7 @@ mkdir -p $result_dir
 mkdir -p $model_dir"/b_$B"
 ln -s $data_dir/* $temp_dir
 #ls -R /
+cat /usr/local/cuda/version.txt
 echo "here"
 pwd
 #ls -R "$workspace/data/"
