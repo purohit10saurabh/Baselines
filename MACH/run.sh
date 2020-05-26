@@ -36,6 +36,9 @@ ln -s $data_dir/* $temp_dir
 #ls -R /
 locate cuda | grep /cuda$
 echo "Here2"
+$PATH
+echo "Here3"
+echo "$PATH"
 find / -type d -name cuda 2>/dev/null
 nvcc --version
 cat /usr/local/cuda/version.txt
