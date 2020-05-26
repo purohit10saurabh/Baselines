@@ -44,6 +44,8 @@ $PATH
 echo "Here3"
 echo "$PATH"
 echo "Here4"
+find / -name nvcc
+echo "Here5"
 find / -type d -name cuda 2>/dev/null
 nvcc --version
 cat /usr/local/cuda/version.txt
