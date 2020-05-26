@@ -36,9 +36,14 @@ ln -s $data_dir/* $temp_dir
 #ls -R /
 locate cuda | grep /cuda$
 echo "Here2"
+export PATH=/usr/local/cuda-10.0/bin:$PATH
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 $PATH
 echo "Here3"
 echo "$PATH"
+echo "Here4"
 find / -type d -name cuda 2>/dev/null
 nvcc --version
 cat /usr/local/cuda/version.txt
