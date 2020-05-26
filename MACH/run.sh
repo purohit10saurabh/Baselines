@@ -34,7 +34,7 @@ mkdir -p $result_dir
 mkdir -p $model_dir"/b_$B"
 ln -s $data_dir/* $temp_dir
 #ls -R /
-locate cuda | grep /cuda$
+#locate cuda | grep /cuda$
 echo "Here2"
 export PATH=/usr/local/cuda-10.0/bin:$PATH
 export PATH=/usr/local/cuda/bin:$PATH
@@ -44,7 +44,7 @@ $PATH
 echo "Here3"
 echo "$PATH"
 echo "Here4"
-find / -name nvcc
+find / -name nvcc 2>/dev/null
 echo "Here5"
 find / -type d -name cuda 2>/dev/null
 nvcc --version
