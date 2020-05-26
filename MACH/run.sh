@@ -3,9 +3,13 @@
 dataset=$1
 workspace="$2"
 data_version="$3"
-command -v module >/dev/null 2>&1 && module load apps/pythonpackages/3.6.0/tensorflow/1.9.0/gpu
-command -v module >/dev/null 2>&1 && module load pythonpackages/3.6.0/pandas/0.23.4/gnu
-command -v module >/dev/null 2>&1 && module load pythonpackages/3.6.0/numpy/1.16.1/gnu
+# command -v module >/dev/null 2>&1 && module load apps/pythonpackages/3.6.0/tensorflow/1.9.0/gpu
+# command -v module >/dev/null 2>&1 && module load pythonpackages/3.6.0/pandas/0.23.4/gnu
+# command -v module >/dev/null 2>&1 && module load pythonpackages/3.6.0/numpy/1.16.1/gnu
+
+module load apps/pythonpackages/3.6.0/tensorflow/1.9.0/gpu
+module load pythonpackages/3.6.0/pandas/0.23.4/gnu
+module load pythonpackages/3.6.0/numpy/1.16.1/gnu
 
 export PYTHONPATH="${PYTHONPATH}:util"
 ##### Move into the respective folder #####
@@ -29,6 +33,7 @@ mkdir -p $temp_dir
 mkdir -p $result_dir
 mkdir -p $model_dir"/b_$B"
 ln -s $data_dir/* $temp_dir
+ls -R "$workspace/data/"
 num_classes=$(head -n 1 $temp_dir/train.txt| awk -F ' ' '{print $3}')
 num_features=$(head -n 1 $temp_dir/train.txt| awk -F ' ' '{print $2}')
 num_train=$(head -n 1 $temp_dir/train.txt| awk -F ' ' '{print $1}')
