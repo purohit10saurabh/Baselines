@@ -18,7 +18,7 @@ convert () {
 }
 
 #work_dir="/mnt/t-sapuro/XC"
-work_dir="../"
+work_dir="/workspace/"
 data_dir="${work_dir}/data/${dataset}"
 model_data_dir="${work_dir}/data/${data_version}/${dataset}"
 mkdir -p "${model_data_dir}"
