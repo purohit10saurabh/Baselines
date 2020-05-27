@@ -102,12 +102,12 @@ train(){
     wait
 }
 predict(){
-    models_per_gpu=32
+    #models_per_gpu=32
     args="--R $R --data_dir $temp_dir --model_dir $model_dir \
         --num_features ${num_features} --num_samples ${num_test} \
         --result_dir ${result_dir} --num_classes $num_classes \
         --B $B --num_gpus ${num_gpus} --gpu ${CUDA_VISIBLE_DEVICES}\
-        --models_per_gpu ${models_per_gpu} --batch_size 32"
+        --models_per_gpu ${RbyNumGPU} --batch_size 32"
     echo $args
     python -u eval.py $args 2>&1|tee "$result_dir/log_predict.txt"
     # python eval_old.py $args |tee "$result_dir/log_predict.txt"
