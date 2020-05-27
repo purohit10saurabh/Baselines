@@ -138,9 +138,11 @@ def data_generator(files, batch_size, feature_dim, n_classes):
                         try:
                             y_idxs = [int(itm) for itm in itms[0].split(',')]
                         except Exception as e:
-                            print("hola error")
-                            print(line, "\n", itms)
-                            raise e
+                            y_idxs = []
+                        # except Exception as e:
+                        #     print("hola error")
+                        #     print(line, "\n", itms)
+                        #     raise e
 
                         y_vals = [1.0 for itm in range(len(y_idxs))]
                         for i in range(len(y_idxs)):
