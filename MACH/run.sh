@@ -1,5 +1,5 @@
 ##### Enabling the import of a function used in evaluation #####
-#sudo make
+make
 dataset=$1
 workspace="$2"
 data_version="$3"
