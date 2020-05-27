@@ -111,7 +111,7 @@ predict(){
     # python eval_old.py $args |tee "$result_dir/log_predict.txt"
 }
 
-train
+#train
 
 predict
 
