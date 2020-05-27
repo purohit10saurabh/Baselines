@@ -19,7 +19,7 @@ B=$4
 echo "Number of B", $B
 R=32
 num_gpus=4
-models_per_gpu=4
+models_per_gpu=2
 # python
 # exit
 #echo "Hi"
