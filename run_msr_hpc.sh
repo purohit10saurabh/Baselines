@@ -60,3 +60,4 @@ if [ "$GPU" == "" ]; then GPU=0; fi
 kill -9 $AZCOPY_PID
 upload_log_file
 yes | azcopy --source ../results/ --destination ${root_blob}/results/ --dest-key ${secret_key} --recursive
+yes | azcopy --source ../models/ --destination ${root_blob}/models/ --dest-key ${secret_key} --recursive
