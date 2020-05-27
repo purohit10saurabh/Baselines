@@ -59,4 +59,4 @@ if [ "$GPU" == "" ]; then GPU=0; fi
 ########## Kill azcopy background process and write output to azure file storage one final time
 kill -9 $AZCOPY_PID
 upload_log_file
-yes | azcopy --source ../results/ --destination ${root_blob}/hpc_Results/EURLex-4K/${A}/ --dest-key ${secret_key} --recursive
+yes | azcopy --source ../results/ --destination ${root_blob}/results/ --dest-key ${secret_key} --recursive
