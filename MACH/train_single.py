@@ -135,7 +135,11 @@ def data_generator(files, batch_size, feature_dim, n_classes):
                     for line in lines:
                         itms = line.strip().split()
                         ##
-                        y_idxs = [int(itm) for itm in itms[0].split(',')]
+                        try:
+                            y_idxs = [int(itm) for itm in itms[0].split(',')]
+                        except Exception as e:
+                            print(line, "\n", itms)
+
                         y_vals = [1.0 for itm in range(len(y_idxs))]
                         for i in range(len(y_idxs)):
                             y_batch[count, lookup[y_idxs[i]]] = y_vals[i]
