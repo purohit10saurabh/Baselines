@@ -1,5 +1,5 @@
 ##### Enabling the import of a function used in evaluation #####
-make
+#make
 dataset=$1
 workspace="$2"
 data_version="$3"
@@ -40,15 +40,15 @@ export PATH=/usr/local/cuda-10.0/bin:$PATH
 export PATH=/usr/local/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
-python --version
-echo "Here3"
-echo "$PATH"
-echo "Here4"
-find / -name nvcc 2>/dev/null
-echo "Here5"
-find / -type d -name cuda 2>/dev/null
-nvcc --version
-cat /usr/local/cuda/version.txt
+# python --version
+# echo "Here3"
+# echo "$PATH"
+# echo "Here4"
+# find / -name nvcc 2>/dev/null
+# echo "Here5"
+# find / -type d -name cuda 2>/dev/null
+# nvcc --version
+# cat /usr/local/cuda/version.txt
 echo "here"
 pwd
 #ls -R "$workspace/data/"
