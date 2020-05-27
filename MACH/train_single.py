@@ -133,7 +133,7 @@ def data_generator(files, batch_size, feature_dim, n_classes):
                     y_batch = np.zeros([batch_size, n_classes], dtype=float)
                     count = 0
                     for line in lines:
-                        itms = line.strip().split()
+                        itms = line.strip().split(" ")
                         ##
                         try:
                             y_idxs = [int(itm) for itm in itms[0].split(',')]
