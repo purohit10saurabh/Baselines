@@ -64,13 +64,13 @@ mkdir -p "$temp_dir/b_$B/lookups"
 # exit
 
 ##### Training multiple repetitions simulataneously #####
-#script="--batch_size=100 --n_epochs=60 --load_epoch=0 \
-#        --data_dir $temp_dir --result_dir ${result_dir} --model_dir $model_dir --B $B \
-#        --n_train $num_train --num_features ${num_features}"
-
-script="--batch_size=30 --n_epochs=60 --load_epoch=0 \
+script="--batch_size=100 --n_epochs=60 --load_epoch=0 \
         --data_dir $temp_dir --result_dir ${result_dir} --model_dir $model_dir --B $B \
         --n_train $num_train --num_features ${num_features}"
+
+#script="--batch_size=30 --n_epochs=60 --load_epoch=0 \
+#        --data_dir $temp_dir --result_dir ${result_dir} --model_dir $model_dir --B $B \
+#        --n_train $num_train --num_features ${num_features}"
 
 run_learner(){
     args=$1
