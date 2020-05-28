@@ -20,6 +20,7 @@ echo "Number of B", $B
 R=32
 num_gpus=4
 models_per_gpu=1
+echo "$models_per_gpu"
 # python
 # exit
 #echo "Hi"
