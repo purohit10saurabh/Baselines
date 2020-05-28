@@ -16,12 +16,13 @@ def get_mat(file_name):
 
 def dedup_main(targets_file, train_file, predictions_file, A, B, file, pos_file):
     predicted_labels = get_mat(predictions_file) 
-    pos_trn = data_utils.read_sparse_file(pos_file, safe_read=False)    
-    pos_tst = (predicted_labels>0).astype(np.float32)
-    pos_tst = pos_tst - pos_trn
-    pos_tst = pos_tst>0
-    predicted_labels = predicted_labels.multiply(pos_tst)
-    predicted_labels.eliminate_zeros()  
+    if os.path.exists(pos_file):
+        pos_trn = data_utils.read_sparse_file(pos_file, safe_read=False)    
+        pos_tst = (predicted_labels>0).astype(np.float32)
+        pos_tst = pos_tst - pos_trn
+        pos_tst = pos_tst>0
+        predicted_labels = predicted_labels.multiply(pos_tst)
+        predicted_labels.eliminate_zeros()      
 
     true_labels = data_utils.read_sparse_file(targets_file, safe_read=False)
     trn_labels = data_utils.read_sparse_file(train_file, safe_read=False)

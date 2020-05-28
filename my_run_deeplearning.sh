@@ -91,16 +91,28 @@ evaluate(){
     python3 -u -W ignore Tools/python/evaluate.py ${args} ${score_file}
 }
 
+# fetch_p_data_rest(){
+#     train_file=$trn_lbl_file
+#     test_file=$tst_lbl_file
+#     score_file="${score_dir}/${METHOD}/${FILE}"
+#     A=$A
+#     B=$B
+#     echo -ne $(evaluate)
+#     echo -ne $(fetch_meta_${METHOD})
+# }
+
 fetch_p_data_rest(){
     train_file=$trn_lbl_file
     test_file=$tst_lbl_file
     score_file="${score_dir}/${METHOD}/${FILE}"
+    file="${score_dir}/${METHOD}/metrics"
+    pos_file="${data_dir}/pos_trn_tst.txt"
     A=$A
     B=$B
-    echo -ne $(evaluate)
+    python3 -W ignore Tools/evaluate_new.py $train_file $test_file $score_file $A $B $file
+    #python3 -W ignore tools/evaluate_new.py $train_file $test_file $score_file $A $B $file -dedup $pos_file
     echo -ne $(fetch_meta_${METHOD})
 }
-
 
 if [ ! -e "${work_dir}/results/${data_version}/${dataset}/summary_full.txt" ]; then
     echo "Algo P1 P3 P5 N1 N3 N5 PSP1 PSP3 PSP5 PSN1 PSN3 PSN5 MODELSIZE TRNTIME PREDTIME" |tee "${work_dir}/results/${data_version}/${dataset}/summary_full.txt"
