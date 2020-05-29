@@ -25,7 +25,7 @@ mkdir -p "${model_data_dir}"
 train_file="${data_dir}/train.txt"
 test_file="${data_dir}/test.txt"
 FILE='score.txt'
-    
+
 trn_ft_file="${model_data_dir}/trn_X_Xf.txt"
 trn_lbl_file="${model_data_dir}/trn_X_Y.txt"
 tst_ft_file="${model_data_dir}/tst_X_Xf.txt"
