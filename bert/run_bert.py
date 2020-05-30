@@ -32,8 +32,8 @@ def runBashCommand(command, args):
 path="/workspace/data/bert/"
 BERT_BASE_DIR=path+"uncased_L-12_H-768_A-12/"
 
-input_file=sys.argv[1]
-output_file=sys.argv[2]
+input_file= "/workspace/data" + sys.argv[1] + '/' + sys.argv[2] + ".txt"
+output_file= "/workspace/results/" + sys.argv[1] + '/' + sys.argv[2] + "_bert.txt"
 
 vocab_file=BERT_BASE_DIR+"vocab.txt"
 bert_config_file=BERT_BASE_DIR+"bert_config.json"
