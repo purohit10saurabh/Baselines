@@ -34,13 +34,20 @@ workspace="/workspace/"
 path=workspace+"data/bert/"
 BERT_BASE_DIR=path+"uncased_L-12_H-768_A-12/"
 
-input_file= workspace+"data" + sys.argv[1] + '/' + sys.argv[2] + ".txt"
-out_dir = workspace+"results/" + sys.argv[1]
-comm = "mkdir "+out_dir
+input_file= workspace+"data/" + sys.argv[1] + '/' + sys.argv[2] + ".txt"
+out_dir = workspace+"results/"
+comm = "mkdir "+ out_dir
 if(os.system(comm) == 0):
 	print("success in mkdir")
 else:
 	print("error in mkdir")
+
+comm += sys.argv[1] 
+if(os.system(comm) == 0):
+	print("success in mkdir")
+else:
+	print("error in mkdir")
+
 output_file= out_dir + '/' + sys.argv[2] + "_bert.txt"
 
 vocab_file=BERT_BASE_DIR+"vocab.txt"
