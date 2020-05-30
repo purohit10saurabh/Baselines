@@ -34,13 +34,7 @@ BERT_BASE_DIR=path+"uncased_L-12_H-768_A-12/"
 
 input_file=sys.argv[1]
 output_file=sys.argv[2]
-#data = '/mnt/t-sapuro/XC/data/new-eurlex/'
-#input_file = data + 'tst_X.content_hr.txt'
-#output_file= data + 'tst_X.content_hr_bert.txt'
-#input_file = data + 'Y.title.txt'
-#output_file= data + 'Y.title_bert.txt'
-#input_file = data + 'my_Y.txt'
-#output_file= data + 'my_Y_bert.txt'
+
 vocab_file=BERT_BASE_DIR+"vocab.txt"
 bert_config_file=BERT_BASE_DIR+"bert_config.json"
 init_checkpoint=BERT_BASE_DIR+"bert_model.ckpt"
