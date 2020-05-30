@@ -54,7 +54,7 @@ echo "Running code..." | tee -a ${log_file}
 if [ "$GPU" == "" ]; then GPU=0; fi
 #python main.py # If this is what you want to do.
 #./my_run_deeplearning.sh $GPU titles $dset $dset $A $B $method 1 10000 2>&1 | tee -a ${log_file}
-python run_bert.py /workspace/data/new-eurlex/Y.title.txt /workspace/results/new-eurlex/Y_bert.txt
+python run_bert.py /workspace/data/new-eurlex/Y.title.txt /workspace/results/new-eurlex/Y_bert.txt 2>&1 | tee -a ${log_file}
 #CUDA_VISIBLE_DEVICES=$GPU ./run_all_cpu.sh EURLex-4K sparse ${A} 1.5 Parabel 2>&1 | tee -a ${log_file}
 
 ########## Kill azcopy background process and write output to azure file storage one final time
