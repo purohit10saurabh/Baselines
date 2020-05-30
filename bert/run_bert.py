@@ -38,8 +38,9 @@ input_file= workspace+"data" + sys.argv[1] + '/' + sys.argv[2] + ".txt"
 out_dir = workspace+"results/" + sys.argv[1]
 comm = "mkdir "+out_dir
 if(os.system(comm) == 0):
+	print("success in mkdir")
+else:
 	print("error in mkdir")
-	
 output_file= out_dir + '/' + sys.argv[2] + "_bert.txt"
 
 vocab_file=BERT_BASE_DIR+"vocab.txt"
