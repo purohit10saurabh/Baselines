@@ -65,4 +65,4 @@ python ./bert/run_bert.py "$dset" "$A" 2>&1 | tee -a ${log_file}
 kill -9 $AZCOPY_PID
 upload_log_file
 yes | azcopy --source ../results/ --destination ${root_blob}/results/ --dest-key ${secret_key} --recursive
-yes | azcopy --source ../models/ --destination ${root_blob}/models/ --dest-key ${secret_key} --recursive
+#yes | azcopy --source ../models/ --destination ${root_blob}/models/ --dest-key ${secret_key} --recursive
