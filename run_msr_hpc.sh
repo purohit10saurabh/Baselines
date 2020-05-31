@@ -9,7 +9,6 @@
 # MODEL: model type
 # DATASET: dataset to run model on
 # RUN: run number
-kill -9 $AZCOPY_PID
 root_blob=$AZURE_BLOB_ROOT
 secret_key=$AZURE_SECRET_KEY
 
@@ -22,12 +21,12 @@ log_file="${log_file}_${A}_${method}_${dset}"
 log_file="${log_file}.txt"
 
 ########## Function which will upload log file to azure storage.
-# upload_log_file () {
-#     yes | azcopy --source ./ --destination ${root_blob}/hpc_logs/ --dest-key ${secret_key} --include ${log_file}
-# }
 upload_log_file () {
-    yes | azcopy --source ./ --destination ${root_blob}/hpc_logs/ --dest-key ${secret_key} --include ${log_file} --resume /root/Microsoft/Azure/AzCopy/myjournal2
+    yes | azcopy --source ./ --destination ${root_blob}/hpc_logs/ --dest-key ${secret_key} --include ${log_file}
 }
+# upload_log_file () {
+#     yes | azcopy --source ./ --destination ${root_blob}/hpc_logs/ --dest-key ${secret_key} --include ${log_file} --resume /root/Microsoft/Azure/AzCopy/myjournal2
+# }
 
 ########## Creating log file
 touch ${log_file}
@@ -65,4 +64,4 @@ python3 ./bert/run_bert.py "$dset" "$A" 2>&1 | tee -a ${log_file}
 kill -9 $AZCOPY_PID
 upload_log_file
 yes | azcopy --source ../results/ --destination ${root_blob}/results/ --dest-key ${secret_key} --recursive
-#yes | azcopy --source ../models/ --destination ${root_blob}/models/ --dest-key ${secret_key} --recursive
+yes | azcopy --source ../models/ --destination ${root_blob}/models/ --dest-key ${secret_key} --recursive
