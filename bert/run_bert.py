@@ -48,7 +48,7 @@ if(os.system(comm) == 0):
 else:
 	print("error in mkdir")
 
-output_file= out_dir + '/' + sys.argv[2] + "_bert.txt"
+output_file= out_dir + sys.argv[2] + "_bert.txt"
 
 vocab_file=BERT_BASE_DIR+"vocab.txt"
 bert_config_file=BERT_BASE_DIR+"bert_config.json"
