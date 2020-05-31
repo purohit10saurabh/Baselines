@@ -22,8 +22,11 @@ log_file="${log_file}_${A}_${method}_${dset}"
 log_file="${log_file}.txt"
 
 ########## Function which will upload log file to azure storage.
+# upload_log_file () {
+#     yes | azcopy --source ./ --destination ${root_blob}/hpc_logs/ --dest-key ${secret_key} --include ${log_file}
+# }
 upload_log_file () {
-    yes | azcopy --source ./ --destination ${root_blob}/hpc_logs/ --dest-key ${secret_key} --include ${log_file}
+    yes | azcopy --source ./ --destination ${root_blob}/hpc_logs/ --dest-key ${secret_key} --include ${log_file} --resume /root/Microsoft/Azure/AzCopy/myjournal
 }
 
 ########## Creating log file
