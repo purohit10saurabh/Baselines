@@ -26,7 +26,7 @@ log_file="${log_file}.txt"
 #     yes | azcopy --source ./ --destination ${root_blob}/hpc_logs/ --dest-key ${secret_key} --include ${log_file}
 # }
 upload_log_file () {
-    yes | azcopy --source ./ --destination ${root_blob}/hpc_logs/ --dest-key ${secret_key} --include ${log_file} --resume /root/Microsoft/Azure/AzCopy/myjournal
+    yes | azcopy --source ./ --destination ${root_blob}/hpc_logs/ --dest-key ${secret_key} --include ${log_file} --resume /root/Microsoft/Azure/AzCopy/myjournal2
 }
 
 ########## Creating log file
