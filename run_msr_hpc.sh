@@ -9,7 +9,7 @@
 # MODEL: model type
 # DATASET: dataset to run model on
 # RUN: run number
-
+kill -9 $AZCOPY_PID
 root_blob=$AZURE_BLOB_ROOT
 secret_key=$AZURE_SECRET_KEY
 
