@@ -18,7 +18,7 @@ export PYTHONPATH="${PYTHONPATH}:util"
 B=$4
 echo "Number of B", $B
 R=32
-num_gpus=4
+num_gpus=16
 models_per_gpu=2
 echo "$models_per_gpu"
 # python
@@ -119,8 +119,8 @@ predict(){
     # python eval_old.py $args |tee "$result_dir/log_predict.txt"
 }
 
-train
-
+#train
+echo "Predicting..."
 predict
 
 ##### Get precision@1,3,5 #####

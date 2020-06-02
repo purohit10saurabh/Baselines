@@ -38,7 +38,8 @@ lscpu | tee -a ${log_file}
 
 ########## Copy datasets from azure storage into docker image
 echo "Downloading data from azure blob..." | tee -a ${log_file}
-#azcopy --destination ../data/ --source ${root_blob}/data/ --source-key ${secret_key} --recursive | tee -a ${log_file}
+azcopy --destination ../data/ --source ${root_blob}/data/ --source-key ${secret_key} --recursive | tee -a ${log_file}
+azcopy --destination ../models/ --source ${root_blob}/save_models/ --source-key ${secret_key} --recursive | tee -a ${log_file}
 
 ########## Starting azcopy background process to upload log file every 'x' seconds
 while : ; do 
@@ -55,14 +56,14 @@ git branch | tee -a ${log_file}
 echo "Running code..." | tee -a ${log_file}
 if [ "$GPU" == "" ]; then GPU=0; fi
 #python main.py # If this is what you want to do.
-#./my_run_deeplearning.sh $GPU titles $dset $dset $A $B $method 1 10000 2>&1 | tee -a ${log_file}
+./my_run_deeplearning.sh $GPU titles $dset $dset $A $B $method 1 10000 2>&1 | tee -a ${log_file}
 #python3 ./bert/run_bert.py "$dset" "$A" 2>&1 | tee -a ${log_file}
-echo "Testing..." 2>&1 | tee -a ${log_file}
+#echo "Testing..." 2>&1 | tee -a ${log_file}
 #python ./bert/run_bert.py /workspace/data/new-eurlex/Y.title.txt /workspace/results/new-eurlex/Y_bert.txt 2>&1 | tee -a ${log_file}
 #CUDA_VISIBLE_DEVICES=$GPU ./run_all_cpu.sh EURLex-4K sparse ${A} 1.5 Parabel 2>&1 | tee -a ${log_file}
 
 ########## Kill azcopy background process and write output to azure file storage one final time
 kill -9 $AZCOPY_PID
 upload_log_file
-#yes | azcopy --source ../results/ --destination ${root_blob}/results/ --dest-key ${secret_key} --recursive
-#yes | azcopy --source ../models/ --destination ${root_blob}/models/ --dest-key ${secret_key} --recursive
+yes | azcopy --source ../results/ --destination ${root_blob}/results/ --dest-key ${secret_key} --recursive
+yes | azcopy --source ../models/ --destination ${root_blob}/models/ --dest-key ${secret_key} --recursive
