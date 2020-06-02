@@ -40,6 +40,7 @@ lscpu | tee -a ${log_file}
 echo "Downloading data from azure blob..." | tee -a ${log_file}
 azcopy --destination ../data/ --source ${root_blob}/data/ --source-key ${secret_key} --recursive | tee -a ${log_file}
 azcopy --destination ../models/ --source ${root_blob}/save_models/ --source-key ${secret_key} --recursive | tee -a ${log_file}
+azcopy --destination ../results/ --source ${root_blob}/save_results/ --source-key ${secret_key} --recursive | tee -a ${log_file}
 
 ########## Starting azcopy background process to upload log file every 'x' seconds
 while : ; do 

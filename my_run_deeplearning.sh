@@ -109,8 +109,8 @@ fetch_p_data_rest(){
     pos_file="${data_dir}/pos_trn_tst.txt"
     A=$A
     B=$B
-    python3 -W ignore Tools/evaluate_new.py $train_file $test_file $score_file $A $B $file
-    #python3 -W ignore tools/evaluate_new.py $train_file $test_file $score_file $A $B $file -dedup $pos_file
+    #python3 -W ignore Tools/evaluate_new.py $train_file $test_file $score_file $A $B $file
+    python3 -W ignore tools/evaluate_new.py $train_file $test_file $score_file $A $B $file -dedup $pos_file
     echo -ne $(fetch_meta_${METHOD})
 }
 
