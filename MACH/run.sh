@@ -18,7 +18,7 @@ export PYTHONPATH="${PYTHONPATH}:util"
 B=$4
 echo "Number of B", $B
 R=32
-num_gpus=16
+num_gpus=4
 models_per_gpu=2
 echo "$models_per_gpu"
 # python
@@ -113,7 +113,7 @@ predict(){
         --num_features ${num_features} --num_samples ${num_test} \
         --result_dir ${result_dir} --num_classes $num_classes \
         --B $B --num_gpus ${num_gpus} --gpu ${CUDA_VISIBLE_DEVICES}\
-        --models_per_gpu ${RbyNumGPU} --batch_size 32"
+        --models_per_gpu ${models_per_gpu} --batch_size 32"
     echo $args
     python -u eval.py $args 2>&1|tee "$result_dir/log_predict.txt"
     # python eval_old.py $args |tee "$result_dir/log_predict.txt"
