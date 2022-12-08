@@ -23,7 +23,7 @@ idna==2.8
 ipaddress==1.0.22
 jmespath==0.9.3
 kiwisolver==1.0.1
-Mako==1.0.7
+Mako==1.2.2
 MarkupSafe==1.1.0
 matplotlib==2.2.3
 nltk==3.2.5
