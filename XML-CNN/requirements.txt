@@ -10,7 +10,7 @@ bz2file==0.98
 certifi==2022.12.7
 cffi==1.11.5
 chardet==3.0.4
-cryptography==2.3.1
+cryptography==39.0.1
 cryptography-vectors==2.3.1
 cycler==0.10.0
 docutils==0.14
